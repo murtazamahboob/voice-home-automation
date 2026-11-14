@@ -72,7 +72,7 @@ class VoiceHomeAgent:
             elif "target_c" in p:
                 self.home.set_thermostat(p["target_c"])
             elif "mode" in p:
-                self.state["thermostat"]["mode"] = p["mode"]
+                self.home.state["thermostat"]["mode"] = p["mode"]
             return action.reply
         if kind == "fan":
             self.home.set_fan(p["speed"])
