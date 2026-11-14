@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "voice-home-automation"
+version = "1.0.0"
+description = "Voice-Controlled Home Automation Agent — offline voice commands for lights, thermostat, fan, door lock and blinds, with a wake-word chime, named scenes, timers and an energy report. No microphone, network or API key needed."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "Murtaza Mahboob" }]
+keywords = [
+    "voice-assistant",
+    "home-automation",
+    "smart-home",
+    "wake-word",
+    "offline-ai",
+    "voice-control",
+    "python",
+    "numpy",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy==1.26.4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.2.0"]
+
+[project.scripts]
+homevoice = "homevoice.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
